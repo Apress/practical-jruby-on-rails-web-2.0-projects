@@ -1,0 +1,21 @@
+<h1>Listing layouts</h1>
+
+<table width="500" class="centered">
+  <tr>
+    <th width="350" align="left">Name</th>
+    <th width="150" align="right"></th>
+  </tr>
+<% for layout in @layouts %>
+  <tr>
+    <td align="left"><%= link_to h(layout.name), :action => 'edit', :id => layout %></td>
+    <td align="right"><%= link_to 'Destroy', { :action => 'destroy', :id => layout }, :confirm => 'Are you sure?', :post => true %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @layout_pages.current.previous } if @layout_pages.current.previous %>
+<%= link_to 'Next page', { :page => @layout_pages.current.next } if @layout_pages.current.next %>
+
+<br />
+
+<%= link_to 'Create new layout', {:action => 'create'}, :post => true %>

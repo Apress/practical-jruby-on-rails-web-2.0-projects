@@ -1,0 +1,27 @@
+<h2>Your cart</h2>
+<table width="480">
+  <thead>
+    <td width="300" align="left">Product Name</td>
+    <td width="20" align="right">Quantity</td>
+    <td width="80" align="right">Each</td>
+    <td width="80" align="right">Price</td>
+  </thead>
+  <% for prod, quo in @pcart %>
+    <tr>
+      <td width="300" align="left"><%= h prod.name %></td>
+      <td width="20" align="right"><%= quo %></td>
+      <td width="80" align="right"><%= price prod %></td>
+      <td width="80" align="right"><%= money(quo * prod.price) %></td>
+    </tr>
+  <% end %>
+  <tr height="60">
+    <td colspan="4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" align="right"><b>Total:</b></td>
+    <td align="right"><%= money @price %></td>
+  </tr>
+  <tr>
+    <td colspan="4" align="right"><%= link_to "Checkout", :action=>'checkout'%></td>
+  </tr>
+</table>

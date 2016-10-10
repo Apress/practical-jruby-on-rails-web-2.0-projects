@@ -1,0 +1,8 @@
+<h2><%= h @product.name %></h2>
+
+<p><b>Description</b><br/>
+<%= h @product.description %></p>
+<br/>
+<br/>
+<p><b>Price</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=price @product%></p>
+<p><%= button_to "Add to cart",:action => 'add_to_cart', :id => @product%></p>

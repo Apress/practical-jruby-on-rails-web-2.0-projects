@@ -1,0 +1,23 @@
+;; Object bb/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bb/"
+  :tables (list 
+   (semanticdb-table "BBService.java"
+    :major-mode 'jde-mode
+    :tags '(("com.bb" package nil nil [1 16]) ("javax.ejb.Remote" include nil nil [18 42]) ("BBService" type (:typemodifiers ("public") :members (("invoke" function (:arguments (("uid" variable (:type "String") (reparse-symbol formal_parameters) [99 109]) ("cred" variable (:type "String") (reparse-symbol formal_parameters) [111 122]) ("methodName" variable (:type "String") (reparse-symbol formal_parameters) [124 141]) ("argument" variable (:type "String") (reparse-symbol formal_parameters) [143 158])) :type "Object") (reparse-symbol interface_member_declaration) [85 160])) :type "interface") nil [52 162]))
+    :file "BBService.java"
+    :pointmax 163
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "BBServiceBean.java"
+    :major-mode 'jde-mode
+    :tags '(("com.bb" package nil nil [1 16]) ("java.io.PrintStream" include nil nil [18 45]) ("java.io.InputStream" include nil nil [46 73]) ("java.io.IOException" include nil nil [74 101]) ("java.io.FileOutputStream" include nil nil [102 134]) ("java.util.List" include nil nil [136 158]) ("java.util.ArrayList" include nil nil [159 186]) ("java.util.Iterator" include nil nil [187 213]) ("javax.annotation.PostConstruct" include nil nil [215 253]) ("javax.annotation.PreDestroy" include nil nil [254 289]) ("javax.ejb.Stateless" include nil nil [290 317]) ("org.jruby.Ruby" include nil nil [319 341]) ("org.jruby.RubyArray" include nil nil [342 369]) ("org.jruby.RubyClass" include nil nil [370 397]) ("org.jruby.RubyException" include nil nil [398 429]) ("org.jruby.RubyKernel" include nil nil [430 458]) ("org.jruby.RubyString" include nil nil [459 487]) ("org.jruby.runtime.builtin.IRubyObject" include nil nil [488 533]) ("org.jruby.runtime.Block" include nil nil [534 565]) ("org.jruby.javasupport.JavaUtil" include nil nil [566 604]) ("org.jruby.exceptions.RaiseException" include nil nil [605 648]) ("BBServiceBean" type (:typemodifiers ("public") :interfaces ("BBService") :members (("engine" variable (:typemodifiers ("private") :type "Ruby") (reparse-symbol class_member_declaration) [779 799]) ("engineClass" variable (:typemodifiers ("private") :type "RubyClass") (reparse-symbol class_member_declaration) [804 834]) ("out" variable (:typemodifiers ("private") :type "PrintStream") (reparse-symbol class_member_declaration) [839 863]) ("init" function (:throws ("IOException") :typemodifiers ("public") :type "void") (reparse-symbol class_member_declaration) [888 1804]) ("destruct" function (:throws ("IOException") :typemodifiers ("public") :type "void") (reparse-symbol class_member_declaration) [1826 1924]) ("invoke" function (:typemodifiers ("public") :arguments (("uid" variable (:type "String") (reparse-symbol formal_parameters) [1951 1961]) ("cred" variable (:type "String") (reparse-symbol formal_parameters) [1963 1974]) ("methodName" variable (:type "String") (reparse-symbol formal_parameters) [1976 1993]) ("argument" variable (:type "String") (reparse-symbol formal_parameters) [1995 2010])) :type "Object") (reparse-symbol class_member_declaration) [1930 3695])) :type "class") nil [725 3697]))
+    :file "BBServiceBean.java"
+    :pointmax 3714
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )

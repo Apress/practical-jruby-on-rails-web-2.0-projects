@@ -1,0 +1,290 @@
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mNativeException: com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: Table 'schema_info' already exists: CREATE TABLE schema_info (version integer(10))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mNativeException: com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: Table 'schema_info' already exists: CREATE TABLE schema_info (version integer(10))[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT * FROM schema_info[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2007-07-08 11:54:47) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types ORDER BY name ASC[0m
+Rendering  within layouts/store
+Rendering store/index
+Completed in 0.63600 (1 reqs/sec) | Rendering: 0.06400 (10%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing StoreController#products (for 127.0.0.1 at 2007-07-08 11:54:51) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"products", "id"=>"1", "controller"=>"store"}
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types ORDER BY name ASC[0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+  [4;36;1mProduct Load (0.000000)[0m   [0;1mSELECT * FROM products WHERE (product_type_id='1') ORDER BY name ASC[0m
+Rendering  within layouts/store
+Rendering store/products
+Completed in 0.12600 (7 reqs/sec) | Rendering: 0.05100 (40%) | DB: 0.00000 (0%) | 200 OK [http://localhost/store/products/1]
+
+
+Processing StoreController#products (for 127.0.0.1 at 2007-07-08 11:54:55) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"products", "id"=>"3", "controller"=>"store"}
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types ORDER BY name ASC[0m
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 3) [0m
+  [4;35;1mProduct Load (0.000000)[0m   [0mSELECT * FROM products WHERE (product_type_id='3') ORDER BY name ASC[0m
+Rendering  within layouts/store
+Rendering store/products
+Completed in 0.09800 (10 reqs/sec) | Rendering: 0.03400 (34%) | DB: 0.00000 (0%) | 200 OK [http://localhost/store/products/3]
+
+
+Processing StoreController#products (for 127.0.0.1 at 2007-07-08 11:54:56) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"products", "id"=>"1", "controller"=>"store"}
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types ORDER BY name ASC[0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+  [4;36;1mProduct Load (0.000000)[0m   [0;1mSELECT * FROM products WHERE (product_type_id='1') ORDER BY name ASC[0m
+Rendering  within layouts/store
+Rendering store/products
+Completed in 0.14600 (6 reqs/sec) | Rendering: 0.07000 (47%) | DB: 0.00000 (0%) | 200 OK [http://localhost/store/products/1]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2007-07-08 11:54:57) [POST]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"add_to_cart", "id"=>"1", "controller"=>"store"}
+  [4;35;1mProduct Load (0.000000)[0m   [0mSELECT * FROM products WHERE (products.`id` = 1) [0m
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+Redirected to http://localhost:3000/store/products/1
+Completed in 0.12000 (8 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/store/add_to_cart/1]
+
+
+Processing StoreController#products (for 127.0.0.1 at 2007-07-08 11:54:58) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"products", "id"=>"1", "controller"=>"store"}
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types ORDER BY name ASC[0m
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+  [4;35;1mProduct Load (0.000000)[0m   [0mSELECT * FROM products WHERE (product_type_id='1') ORDER BY name ASC[0m
+Rendering  within layouts/store
+Rendering store/products
+Completed in 0.12300 (8 reqs/sec) | Rendering: 0.04700 (38%) | DB: 0.00000 (0%) | 200 OK [http://localhost/store/products/1]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2007-07-08 11:55:01) [POST]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"add_to_cart", "id"=>"1", "controller"=>"store"}
+  [4;36;1mProduct Load (0.000000)[0m   [0;1mSELECT * FROM products WHERE (products.`id` = 1) [0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+Redirected to http://localhost:3000/store/products/1
+Completed in 0.08200 (12 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/store/add_to_cart/1]
+
+
+Processing StoreController#products (for 127.0.0.1 at 2007-07-08 11:55:01) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"products", "id"=>"1", "controller"=>"store"}
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types ORDER BY name ASC[0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+  [4;36;1mProduct Load (0.000000)[0m   [0;1mSELECT * FROM products WHERE (product_type_id='1') ORDER BY name ASC[0m
+Rendering  within layouts/store
+Rendering store/products
+Completed in 0.16300 (6 reqs/sec) | Rendering: 0.04300 (26%) | DB: 0.00000 (0%) | 200 OK [http://localhost/store/products/1]
+
+
+Processing StoreController#cart (for 127.0.0.1 at 2007-07-08 11:55:03) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"cart", "controller"=>"store"}
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types ORDER BY name ASC[0m
+  [4;36;1mProduct Load (0.000000)[0m   [0;1mSELECT * FROM products WHERE (products.`id` = 1) [0m
+Rendering  within layouts/store
+Rendering store/cart
+Completed in 0.11400 (8 reqs/sec) | Rendering: 0.05200 (45%) | DB: 0.00000 (0%) | 200 OK [http://localhost/store/cart]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2007-07-08 11:55:05) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"checkout", "controller"=>"store"}
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types ORDER BY name ASC[0m
+Rendering  within layouts/store
+Rendering store/checkout
+Completed in 0.11400 (8 reqs/sec) | Rendering: 0.05800 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/store/checkout]
+AdminController: missing default helper path admin_helper
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2007-07-08 11:55:12) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"index", "controller"=>"products"}
+Redirected to http://localhost:3000/auth/login?into=http%3A%2F%2Flocalhost%3A3000%2Fproducts
+Completed in 0.00900 (111 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/products]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2007-07-08 11:55:12) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"into"=>"http://localhost:3000/products", "action"=>"login", "controller"=>"auth"}
+Rendering  within layouts/admin
+Rendering auth/login
+DEPRECATION WARNING: start_form_tag is deprecated and will be removed from Rails 2.0 (use form_tag instead)  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47auth47login46rhtml at script/../config/../app/views/auth/login.rhtml:4)
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47auth47login46rhtml at script/../config/../app/views/auth/login.rhtml:17)
+Completed in 0.05900 (16 reqs/sec) | Rendering: 0.05400 (91%) | DB: 0.00000 (0%) | 200 OK [http://localhost/auth/login?into=http%3A%2F%2Flocalhost%3A3000%2Fproducts]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2007-07-08 11:55:16) [POST]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"into"=>"http://localhost:3000/products", "commit"=>"Login", "username"=>"admin", "action"=>"login", "controller"=>"auth", "password"=>"admin"}
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.`username` = 'admin' AND users.`password` = 'admin') LIMIT 1[0m
+Redirected to http://localhost:3000/products
+Completed in 0.03900 (25 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/auth/login]
+AdminController: missing default helper path admin_helper
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2007-07-08 11:55:16) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM products [0m
+  [4;35;1mProduct Load (0.000000)[0m   [0mSELECT * FROM products LIMIT 0, 10[0m
+Rendering actionlistlayoutfalse within layouts/admin
+Rendering products/list
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+Completed in 0.17600 (5 reqs/sec) | Rendering: 0.08900 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/products]
+AdminController: missing default helper path admin_helper
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2007-07-08 11:55:21) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM products [0m
+  [4;35;1mProduct Load (0.000000)[0m   [0mSELECT * FROM products LIMIT 0, 10[0m
+Rendering actionlistlayoutfalse within layouts/admin
+Rendering products/list
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+Completed in 0.13800 (7 reqs/sec) | Rendering: 0.06000 (43%) | DB: 0.00000 (0%) | 200 OK [http://localhost/products]
+AdminController: missing default helper path admin_helper
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2007-07-08 11:55:23) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"products"}
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mProduct Load (0.000000)[0m   [0;1mSELECT * FROM products WHERE (products.`id` = 1) [0m
+Rendering  within layouts/admin
+Rendering products/show
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+  [4;36;1mProductCategory Load (0.000000)[0m   [0;1mSELECT * FROM product_categories INNER JOIN product_categories_products ON product_categories.id = product_categories_products.product_category_id WHERE (product_categories_products.product_id = 1 ) [0m
+Completed in 0.18200 (5 reqs/sec) | Rendering: 0.11400 (62%) | DB: 0.00000 (0%) | 200 OK [http://localhost/products/show/1]
+AdminController: missing default helper path admin_helper
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2007-07-08 11:55:26) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"products"}
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mProduct Load (0.000000)[0m   [0;1mSELECT * FROM products WHERE (products.`id` = 1) [0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types [0m
+  [4;36;1mProductCategory Load (0.000000)[0m   [0;1mSELECT * FROM product_categories [0m
+Rendering  within layouts/admin
+Rendering products/edit
+DEPRECATION WARNING: start_form_tag is deprecated and will be removed from Rails 2.0 (use form_tag instead)  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47products47edit46rhtml at script/../config/../app/views/products/edit.rhtml:4)
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 2) [0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types WHERE (product_types.`id` = 2) [0m
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 2) [0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types WHERE (product_types.`id` = 2) [0m
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 2) [0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types WHERE (product_types.`id` = 2) [0m
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 3) [0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types WHERE (product_types.`id` = 3) [0m
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 3) [0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types WHERE (product_types.`id` = 3) [0m
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 3) [0m
+  [4;35;1mProductCategory Load (0.000000)[0m   [0mSELECT * FROM product_categories INNER JOIN product_categories_products ON product_categories.id = product_categories_products.product_category_id WHERE (product_categories_products.product_id = 1 ) [0m
+Rendered products/_categories (0.10500)
+Rendered products/_form (0.12600)
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47products47edit46rhtml at script/../config/../app/views/products/edit.rhtml:7)
+Completed in 0.27400 (3 reqs/sec) | Rendering: 0.16100 (58%) | DB: 0.00000 (0%) | 200 OK [http://localhost/products/edit/1]
+AdminController: missing default helper path admin_helper
+
+
+Processing UsersController#index (for 127.0.0.1 at 2007-07-08 11:55:30) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users LIMIT 0, 10[0m
+Rendering actionlistlayoutfalse within layouts/admin
+Rendering users/list
+Completed in 0.07600 (13 reqs/sec) | Rendering: 0.03700 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/users]
+AdminController: missing default helper path admin_helper
+
+
+Processing UsersController#new (for 127.0.0.1 at 2007-07-08 11:55:32) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+Rendering  within layouts/admin
+Rendering users/new
+DEPRECATION WARNING: start_form_tag is deprecated and will be removed from Rails 2.0 (use form_tag instead)  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47users47new46rhtml at script/../config/../app/views/users/new.rhtml:4)
+Rendered users/_form (0.00400)
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47users47new46rhtml at script/../config/../app/views/users/new.rhtml:7)
+Completed in 0.06700 (14 reqs/sec) | Rendering: 0.04300 (64%) | DB: 0.00000 (0%) | 200 OK [http://localhost/users/new]
+AdminController: missing default helper path admin_helper
+
+
+Processing UsersController#create (for 127.0.0.1 at 2007-07-08 11:55:39) [POST]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"commit"=>"Create", "action"=>"create", "controller"=>"users", "user"=>{"username"=>"olabini", "password"=>"r2axe566"}}
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO users (`username`, `password`) VALUES('olabini', 'r2axe566')[0m
+Redirected to http://localhost:3000/users/list
+Completed in 0.04100 (24 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/users/create]
+AdminController: missing default helper path admin_helper
+
+
+Processing UsersController#list (for 127.0.0.1 at 2007-07-08 11:55:39) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"list", "controller"=>"users"}
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users LIMIT 0, 10[0m
+Rendering  within layouts/admin
+Rendering users/list
+DEPRECATION WARNING: Passing :post as a link modifier is deprecated. Use :method => "post" instead. :post will be removed in Rails 2.0.  See http://www.rubyonrails.org/deprecation for details. (called from convert_options_to_javascript! at /Users/olabini/workspace/jruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/url_helper.rb:331)
+DEPRECATION WARNING: Passing :post as a link modifier is deprecated. Use :method => "post" instead. :post will be removed in Rails 2.0.  See http://www.rubyonrails.org/deprecation for details. (called from convert_options_to_javascript! at /Users/olabini/workspace/jruby/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/url_helper.rb:331)
+Completed in 0.07900 (12 reqs/sec) | Rendering: 0.02900 (36%) | DB: 0.00000 (0%) | 200 OK [http://localhost/users/list]
+AdminController: missing default helper path admin_helper
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2007-07-08 11:55:42) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"index", "controller"=>"orders"}
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mOrder Load (0.000000)[0m   [0;1mSELECT * FROM orders WHERE (status = 'placed') [0m
+Rendering actionlistlayoutfalse within layouts/admin
+Rendering orders/list
+Completed in 0.08700 (11 reqs/sec) | Rendering: 0.02900 (33%) | DB: 0.00000 (0%) | 200 OK [http://localhost/orders]
+
+
+Processing StoreController#products (for 127.0.0.1 at 2007-07-08 11:57:58) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"products", "id"=>"1", "controller"=>"store"}
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProductType Load (0.000000)[0m   [0mSELECT * FROM product_types ORDER BY name ASC[0m
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types WHERE (product_types.`id` = 1) [0m
+  [4;35;1mProduct Load (0.000000)[0m
+
+Processing StoreController#product (for 127.0.0.1 at 2007-07-08 11:58:00) [GET]
+  Session ID: acd2bb9d37e99cbb973ba9b47821e23c
+  Parameters: {"action"=>"product", "id"=>"1", "controller"=>"store"}
+  [4;36;1mProductType Load (0.000000)[0m   [0;1mSELECT * FROM product_types ORDER BY name ASC[0m
+  [4;35;1mProduct Load (0.000000)[0m   [0mSELECT * FROM products WHERE (products.`id` = 1) [0m
+Rendering  within layouts/store
+Rendering store/product
+Completed in 0.13200 (7 reqs/sec) | Rendering: 0.03200 (24%) | DB: 0.00000 (0%) | 200 OK [http://localhost/shoplet/store/product/1]

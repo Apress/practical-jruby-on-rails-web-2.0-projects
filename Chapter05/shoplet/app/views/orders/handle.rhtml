@@ -1,0 +1,44 @@
+
+<h2>Handle order</h2>
+
+<p><b>Customer:</b> <%= h @order.customer %></p>
+<p><b>Shipping address:</b><br/>
+<%= h @order.customer.shipping_address_street %><br/>
+<%= h "#{@order.customer.shipping_address_postal} #{@order.customer.shipping_address_zip}"%><br/>
+<%= h @order.customer.shipping_address_country %></p>
+
+<p><b>Billing address:</b><br/>
+<%= h @order.customer.billing_address_street %><br/>
+<%= h "#{@order.customer.billing_address_postal} #{@order.customer.billing_address_zip}"%><br/>
+<%= h @order.customer.billing_address_country %></p>
+
+<br/>
+
+<table width="480">
+  <thead>
+    <td width="300" align="left">Product Name</td>
+    <td width="20" align="right">Quantity</td>
+    <td width="80" align="right">Each</td>
+    <td width="80" align="right">Price</td>
+  </thead>
+
+  <% @order.order_lines.each do |ol| %>
+    <tr>
+      <td width="300" align="left"><%= h ol.product.name %></td>
+      <td width="20" align="right"><%= ol.amount %></td>
+      <td width="80" align="right"><%= price ol.product %></td>
+      <td width="80" align="right"><%= money(ol.amount * ol.product.price) %></td>
+    </tr>
+  <% end %>
+  <tr height="60">
+    <td colspan="4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" align="right"><b>Total:</b></td>
+    <td align="right"><%= money @price %></td>
+  </tr>
+</table>
+
+<%= button_to 'Handled', :action=>'handled',:id=>@order %>
+<%= button_to 'Remove', :action=>'remove',:id=>@order %>
+

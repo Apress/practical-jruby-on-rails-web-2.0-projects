@@ -1,0 +1,15 @@
+;; Object auth/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "auth/"
+  :tables (list 
+   (semanticdb-table "login.rhtml"
+    :major-mode 'html-mode
+    :tags '(("Please login with your username and password" section nil nil [1 4]))
+    :file "login.rhtml"
+    :pointmax 395
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0beta3"
+  :semanticdb-version "2.0beta3"
+  )

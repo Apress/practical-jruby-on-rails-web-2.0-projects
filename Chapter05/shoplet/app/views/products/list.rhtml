@@ -1,0 +1,27 @@
+<h1>Products</h1>
+
+<table width="400">
+  <tr>
+    <th align="left">Name</th>
+    <th>Type</th>
+    <th>Price</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </tr>
+  <% for product in @products %>
+    <tr>
+      <td align="left" valign="top"><%= link_to h(product.name),{:action => 'show', :id => product}, :class=>'productLink' %></td>
+      <td align="right" valign="top"><%=h product.product_type.name%></td>
+      <td align="right" valign="top"><%=price product %></td>
+      <td>&nbsp;</td>
+      <td><%= link_to 'Remove', {:action => 'destroy', :id => product}, :confirm => 'Are you sure?', :post => true %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @product_pages.current.previous } if @product_pages.current.previous %>
+<%= link_to 'Next page', { :page => @product_pages.current.next } if @product_pages.current.next %>
+
+<br />
+
+<%= link_to 'New product', :action => 'new' %>

@@ -1,0 +1,11 @@
+<ol id="styles-list">
+  <% for styling in @layout.stylings %>
+  <li id="item_<%=styling.id%>" style="cursor:move;">
+    <%=styling.style.name%> (<%=styling.style.style_type.name%>) <%= link_to_remote 'Remove', :update => 'styles', :url=>{:action => 'remove_style', :id => @layout, :styling => styling} %>
+  </li>
+  <% end %>
+</ol>
+
+<%= sortable_element 'styles-list',
+    :url => {:action => 'sort', :id => @layout},
+    :complete => visual_effect(:highlight, 'styles-list') %>

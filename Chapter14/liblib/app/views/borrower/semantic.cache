@@ -1,0 +1,23 @@
+;; Object borrower/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "borrower/"
+  :tables (list 
+   (semanticdb-table "new.rhtml"
+    :major-mode 'html-mode
+    :tags '(("Please submit your borrower information" section nil nil [1 4]))
+    :file "new.rhtml"
+    :pointmax 952
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "list.rhtml"
+    :major-mode 'html-mode
+    :tags '(("Borrowers" section nil nil [1 4]))
+    :file "list.rhtml"
+    :pointmax 816
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )

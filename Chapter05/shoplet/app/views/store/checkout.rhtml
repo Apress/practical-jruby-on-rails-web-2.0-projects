@@ -1,0 +1,45 @@
+<h2>Checkout</h2>
+
+<% form_for :customer, @customer, :url => {:action => 'order'} do |f| %>
+  <table>
+    <tr>
+      <td>Given Name:</td>
+      <td><%= f.text_field :given_name %></td>
+      <td>Sur Name:</td>
+      <td><%= f.text_field :sur_name %></td>
+    </tr>
+    <tr><td colspan="4" align="left"><b>Shipping address</b></td></tr>
+    <tr>
+      <td>Street:</td>
+      <td colspan="3"><%= f.text_field :shipping_address_street, :size=>60 %></td>
+    </tr>
+    <tr>
+      <td>Postal address:</td>
+      <td><%= f.text_field :shipping_address_postal %></td>
+      <td>Zip code:</td>
+      <td><%= f.text_field :shipping_address_zip, :size=>10 %></td>
+    </tr>
+    <tr>
+      <td>Country:</td>
+      <td colspan="3"><%= f.text_field :shipping_address_country %></td>
+    </tr>
+    <tr><td colspan="4" align="left"><b>Billing address</b> <i>(leave blank if same as shipping address)</i></td></tr>
+    <tr>
+      <td>Street:</td>
+      <td colspan="3"><%= f.text_field :billing_address_street, :size=>60 %></td>
+    </tr>
+    <tr>
+      <td>Postal address:</td>
+      <td><%= f.text_field :billing_address_postal %></td>
+      <td>Zip code:</td>
+      <td><%= f.text_field :billing_address_zip, :size=>10 %></td>
+    </tr>
+    <tr>
+      <td>Country:</td>
+      <td colspan="3"><%= f.text_field :billing_address_country %></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="right"><%= submit_tag "Place order" %></td>
+    </tr>
+  </table>
+<% end %>

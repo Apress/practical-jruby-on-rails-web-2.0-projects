@@ -1,0 +1,12 @@
+<%= error_messages_for 'path' %>
+
+<!--[form:path]-->
+<p><label for="path_name">Name</label><br/>
+<%= text_field 'path', 'name'  %></p>
+
+<p><label for="path_path">Path</label><br/>
+<%= text_field 'path', 'path'  %></p>
+
+<p><label for="path_layout_id">Layout</label><br/>
+  <%= select 'path', 'layout_id', @layouts.collect {|l| [l.name, l.id]} %></p>
+<!--[eoform:path]-->

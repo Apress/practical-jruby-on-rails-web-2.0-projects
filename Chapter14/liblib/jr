@@ -1,0 +1,16 @@
+#!/bin/sh
+
+GLASSFISH=/Users/olabini/workspace/glassfish
+
+CLASSPATH=${CLASSPATH}:liblib-connector.jar
+CLASSPATH=${CLASSPATH}:${GLASSFISH}/lib/appserv-rt.jar
+CLASSPATH=${CLASSPATH}:${GLASSFISH}/lib/appserv-ws.jar
+CLASSPATH=${CLASSPATH}:${GLASSFISH}/lib/install/applications/jmsra/jmsra.jar
+CLASSPATH=${CLASSPATH}:${GLASSFISH}/lib/install/applications/jmsra/imqjmsra.jar
+CLASSPATH=${CLASSPATH}:${GLASSFISH}/lib/install/applications/jmsra/imqbroker.jar
+CLASSPATH=${CLASSPATH}:${GLASSFISH}/lib/imq.jar
+CLASSPATH=${CLASSPATH}:${GLASSFISH}/lib/appserv-admin.jar
+CLASSPATH=${CLASSPATH}:${GLASSFISH}/imq/lib/jms.jar
+CLASSPATH=${CLASSPATH}:${GLASSFISH}/lib/javaee.jar
+
+jruby $*

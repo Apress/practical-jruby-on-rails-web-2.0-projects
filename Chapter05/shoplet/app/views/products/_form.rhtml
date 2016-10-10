@@ -1,0 +1,19 @@
+<%= error_messages_for 'product' %>
+
+<!--[form:product]-->
+<p><label for="product_name">Name</label><br/>
+<%= text_field 'product', 'name'  %></p>
+
+<p><label for="product_description">Description</label><br/>
+<%= text_area 'product', 'description'  %></p>
+
+<p><label for="product_product_type">Product Type</label><br/>
+<%= select 'product', 'product_type_id', @product_types.collect {|p| [ p.name, p.id ] },{},
+            :onChange => "\$(waitOut).innerHTML='<i>(Updating categories, please wait...)</i>'; new Ajax.Updater('categoriesSelector','#{url_for(:controller=>'products',:action=>'categories_partial',:id=>@product)}?tp=' + this[this.selectedIndex].value,
+              {onComplete:function(){\$(waitOut).innerHTML='';new Effect.Highlight('categoriesSelector');}, asynchronous:true});"%></p>
+<p><label for="product_categories[]">Product Categories <span id="waitOut"></span></label><br/>
+<div id="categoriesSelector"><%= render :partial => 'categories' %></div></p>
+
+<p><label for="product_price">Price</label><br/>
+$<%= text_field_tag 'product[price]', price(@product)[1..-1]  %></p>
+<!--[eoform:product]-->

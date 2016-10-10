@@ -1,0 +1,8 @@
+<% for column in Order.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @order.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @order %> |
+<%= link_to 'Back', :action => 'list' %>

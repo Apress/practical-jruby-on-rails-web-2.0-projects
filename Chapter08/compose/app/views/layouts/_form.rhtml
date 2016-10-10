@@ -1,0 +1,16 @@
+<%= error_messages_for 'layout' %>
+
+<!--[form:layout]-->
+<p><label for="layout_name">Name</label><br/>
+<%= text_field 'layout', 'name'  %></p>
+
+<div id="styles">
+<%= render :partial => 'style_list' %>
+</div>
+<p>
+<%= select_tag 'layout_add_style',@styles.inject("") {|sum, s| sum << "<option value=\"#{s.id}\">#{s.name} (#{s.style_type.name})</option>" } %>
+<%= link_to_remote 'Add style', :update => 'styles', :url=>"'+theUrl+'", :before => "theUrl = '#{url_for(:action => 'add_style', :id => @layout)}?style='+$(layout_add_style).value" %>
+</p>
+
+
+<!--[eoform:layout]-->

@@ -1,0 +1,23 @@
+<h1>Borrowers</h1>
+
+<table width="600">
+  <tr>
+    <th align="left">Name</th>
+    <th align="left">Username</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% for borrower in @borrowers %>
+  <tr>
+    <td><%=h borrower.name %></td>
+    <td><%=h borrower.authentication.username %></td>
+    <td></td>
+    <td><%=link_to('Create librarian', {:action => 'create_librarian', :id => borrower}, :post => true) unless borrower.is_librarian? %></td>
+    <td><%=link_to('Remove', { :action => 'remove', :id => borrower }, :confirm => 'Are you sure?', :post => true) %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @borrower_pages.current.previous } if @borrower_pages.current.previous %>
+<%= link_to 'Next page', { :page => @borrower_pages.current.next } if @borrower_pages.current.next %>

@@ -1,0 +1,6 @@
+<%= select_tag 'product_categories[]',
+            options_for_select(@product_categories.select {|p|p.product_type.id ==
+                                 ((@product && @product.product_type) || @product_types.first).id}.collect {|p| [ p.name, p.id ] },
+    (@product && @product.product_categories.collect(&:id)) || nil),
+    :multiple=>true, :size=>5 %>
+

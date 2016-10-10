@@ -1,0 +1,16 @@
+;; Object librarians/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "librarians/"
+  :tables (list 
+   (semanticdb-table "list.rhtml"
+    :major-mode 'html-mode
+    :tags '(("Librarians" section nil nil [1 4]))
+    :file "list.rhtml"
+    :pointmax 1305
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )

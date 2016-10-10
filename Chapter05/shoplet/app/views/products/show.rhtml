@@ -1,0 +1,18 @@
+<p><b>Name:</b> <%= @product.name %></p>
+<p><b>Description:</b><br/>
+  <%= @product.description %>
+</p>
+<p><b>Price:</b> <%= price(@product) %></p>
+<p>
+  <b>Product Type:</b> <%=h @product.product_type.name %>
+</p>
+<p>
+  <b>Product Categories:</b><br/>
+  <% @product.product_categories.each do |cat| %>
+  <%=h cat.name %><br/>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', :action => 'edit', :id => @product %> |
+<%= link_to 'Back', :action => 'list' %>
+

@@ -1,0 +1,51 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+h2 a {
+  text-decoration: none;
+  color: black;
+}
+
+h3 a {
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+thead td {
+  font-weight: bold;
+}
+
+.productLink {
+  color: black;
+  font-weight: normal;
+}
+
+.adminLink {
+  color: black;
+  font-weight: normal;
+}
+
+.leftMenu {
+  padding-top: 20px;
+  border: 1px solid black;
+  border-left: none;
+  font-family: arial, sans-serif;
+  background-color: #CCCCEE;
+}
+
+.main {
+  padding: 30px;
+  color: dark-grey;
+}

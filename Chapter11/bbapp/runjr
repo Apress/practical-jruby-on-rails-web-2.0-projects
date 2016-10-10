@@ -1,0 +1,10 @@
+#!/bin/sh
+
+export CLASSPATH=${CLASSPATH}:/home/olagus/workspace/glassfish/lib/appserv-rt.jar
+export CLASSPATH=${CLASSPATH}:/home/olagus/workspace/glassfish/lib/j2ee.jar
+export CLASSPATH=${CLASSPATH}:/home/olagus/workspace/glassfish/lib/j2ee-svc.jar
+export CLASSPATH=${CLASSPATH}:/home/olagus/workspace/glassfish/lib/javaee.jar
+export CLASSPATH=${CLASSPATH}:/home/olagus/books/jrubyonrails/projects/p3/bbservice/bbservice.jar
+
+export JAVA_OPTS="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=12666 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
+jruby $*

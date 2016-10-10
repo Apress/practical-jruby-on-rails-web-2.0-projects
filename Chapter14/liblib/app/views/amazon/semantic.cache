@@ -1,0 +1,28 @@
+;; Object amazon/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "amazon/"
+  :tables (list 
+   (semanticdb-table "search.rhtml"
+    :major-mode 'html-mode
+    :tags '(("Amazon Book search" section nil nil [1 4]))
+    :file "search.rhtml"
+    :pointmax 462
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "_amazon_result.rhtml"
+    :major-mode 'html-mode
+    :tags '(("Publisher" section nil nil [103 106]))
+    :file "_amazon_result.rhtml"
+    :pointmax 874
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "import.rhtml"
+    :major-mode 'html-mode
+    :tags 'nil
+    :file "import.rhtml"
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )

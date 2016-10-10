@@ -1,0 +1,31 @@
+<h1>Authenticated users</h1>
+
+<table width="400" class="centered">
+  <tr>
+    <th align="left" width="100">Username</th>
+    <th align="right" width="100">Password</th>
+    <th align="right" width="50"></th>
+    <th align="right" width="150"></th>
+  </tr>
+
+<% for user in @users %>
+  <tr>
+    <td align="left"><%= h user.username %></td>
+    <td align="right"><%= h user.password.gsub(/./,'*') %></td>
+    <td>&nbsp;</td>
+    <td><%= link_to 'Remove', { :action => 'destroy', :id => user }, :confirm => 'Are you sure?', :post => true %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @user_pages.current.previous } if @user_pages.current.previous %>
+<%= link_to 'Next page', { :page => @user_pages.current.next } if @user_pages.current.next %>
+
+<br />
+
+<h1>New user</h1>
+
+<%= start_form_tag :action => 'create' %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag "Create" %>
+<%= end_form_tag %>

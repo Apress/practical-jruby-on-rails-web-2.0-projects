@@ -1,0 +1,25 @@
+<h1><%=@book.name%></h1>
+<p><b>Authors:</b>
+<ul>
+  <% for author in @book.authors %>
+    <li><%= author %></li>
+  <% end %>
+</ul></p>
+<p><b>ISBN:</b> <%= @book.isbn %></p>
+<p><b>Copies:</b>
+  <% for id, instance in @sorted %>
+    <li>At <u><%=instance[0]%></u>: <%= instance[1] %> <i>(<%= instance[2] %> available)</i></li>
+  <% end %>
+</ul></p>
+<br/>
+<% if @a_librarian %>
+  <%= link_to 'Add instance', {:action => 'add_instance', :id => params[:id]}, :post => true %> |
+  <%= link_to 'Remove instance', {:action => 'remove_instance', :id => @lendable_here, :bookid => params[:id]}, :post => true if @lendable_here %>
+  <%= 'Remove instance' unless @lendable_here %> |
+  <%= link_to 'Remove this book', {:action => 'remove_description', :id => params[:id] }, :post => true if @sorted.empty? %>
+  <%= 'Remove this book' unless @sorted.empty? %>
+  <br/><br/>
+<% end %>
+<%= link_to 'Borrow this book', {:action => 'lend', :id => @lendable_here, :bookid => params[:id]}, :post => true if @lendable_here %>
+<%= 'Borrow this book' unless @lendable_here %> |
+<%= link_to 'Return this book', {:action => 'ret', :id => params[:id]}, :post => true %>

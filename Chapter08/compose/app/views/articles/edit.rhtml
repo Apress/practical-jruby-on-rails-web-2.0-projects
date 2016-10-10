@@ -1,0 +1,10 @@
+<h1>Editing article</h1>
+
+<%= start_form_tag({:action => 'update', :id => @article}, {:name => 'main_form'}) %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+  <%= submit_tag 'Preview', :name => 'preview', :onClick => "$(main_form).target='_new';return true;" %>
+<%= end_form_tag %>
+
+<%= link_to 'Show', :action => 'show', :id => @article %> |
+<%= link_to 'Back', :action => 'list' %>

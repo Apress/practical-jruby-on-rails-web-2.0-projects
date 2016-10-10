@@ -1,0 +1,17 @@
+<h1>Sequences</h1>
+
+<ul>
+  <% for seq in @sequences %>
+  <li>
+    <%= link_to h(seq), {:action => 'show', :id => seq}, :class => 'adminLink' %>
+  </li>
+  <% end %>
+</ul>
+
+<h2>New sequence</h2>
+
+<%= start_form_tag :action => 'create' %>
+  <p><label for="id">Name:</label> <input type="text" name="id" id="id"/></p>
+  <%= submit_tag "Create" %>
+<%= end_form_tag %>
+

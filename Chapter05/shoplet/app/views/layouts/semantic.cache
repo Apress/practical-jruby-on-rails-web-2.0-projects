@@ -1,0 +1,15 @@
+;; Object layouts/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "layouts/"
+  :tables (list 
+   (semanticdb-table "admin.rhtml"
+    :major-mode 'html-mode
+    :tags '(("Shoplet Online Store Administration: <%=controller.action_name%> <%=h params[:controller]%>" section nil nil [17 213]) ("'store', :action=>'index'%>" section (:members (("'store', :action=>'index'%>" section (:members (("'store', :action=>'index'%>" section nil nil [425 516]) ("'store', :action=>'index'%>" section nil nil [516 519]))) nil [342 345]))) nil [213 218]))
+    :file "admin.rhtml"
+    :pointmax 1355
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0beta3"
+  :semanticdb-version "2.0beta3"
+  )

@@ -1,0 +1,16 @@
+;; Object layouts/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "layouts/"
+  :tables (list 
+   (semanticdb-table "bb.rhtml"
+    :major-mode 'html-mode
+    :tags '(("Big Brother: <%= controller.action_name %> <%=h params[:controller]%>" section nil nil [279 448]) ("Big Brother" section (:members (("Big Brother" section nil nil [590 593]))) nil [448 453]))
+    :file "bb.rhtml"
+    :pointmax 1297
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )

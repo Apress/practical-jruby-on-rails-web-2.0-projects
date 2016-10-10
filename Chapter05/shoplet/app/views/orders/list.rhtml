@@ -1,0 +1,20 @@
+<h1>Orders to handle</h1>
+
+<table width="500">
+  <tr>
+    <th>Customer</th>
+    <th>Time</th>
+    <th>Amount</th>
+    <th>Items</th>
+  </tr>
+
+<% for order in @orders %>
+  <tr>
+    <td><%= h order.customer %></td>
+    <td><%= order.time.strftime("%Y%m%d-%H:%M") %></td>
+    <td align="right"><%= money(order.order_lines.inject(0){|sum,ol| sum + ol.amount*ol.product.price}) %></td>
+    <td align="right"><%= order.order_lines.inject(0){|sum,ol| sum + ol.amount} %></td>
+    <td align="right" width="150"><%= link_to "Handle order", :action => 'handle', :id => order %></td>
+  </tr>
+<% end %>
+</table>

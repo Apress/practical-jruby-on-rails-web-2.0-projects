@@ -1,0 +1,22 @@
+<%= error_messages_for 'article' %>
+
+<!--[form:article]-->
+<p><label for="article_subject">Subject</label><br/>
+<%= text_field 'article', 'subject'  %></p>
+
+<p><label for="article_name">Name (will be used in the URL to identify article, can have regexp parts)</label><br/>
+<%= text_field 'article', 'name'  %></p>
+
+<p><label for="article_content">Content</label><br/>
+<%= text_area 'article', 'content'  %></p>
+
+<p><label for="article_content_type_id">Content Type</label><br/>
+<%= select 'article', 'content_type_id', @content_types.collect {|c| [c.name, c.id]} %></p>
+
+<p><label for="article_layout_id">Layout</label><br/>
+<%= select 'article', 'layout_id', @layouts.collect {|l| [l.name, l.id]}, :include_blank => true %></p>
+
+<p><label for="article_path_id">Path</label><br/>
+<%= select 'article', 'path_id', @paths.collect {|p| [p.name, p.id]} %></p>
+<!--[eoform:article]-->
+

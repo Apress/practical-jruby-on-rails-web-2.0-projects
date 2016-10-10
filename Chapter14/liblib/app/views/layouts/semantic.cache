@@ -1,0 +1,16 @@
+;; Object layouts/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "layouts/"
+  :tables (list 
+   (semanticdb-table "application.rhtml"
+    :major-mode 'html-mode
+    :tags '(("LibLib" section nil nil [285 359]) ("LIBLIB" section (:members (("LIBLIB" section nil nil [501 504]))) nil [359 364]))
+    :file "application.rhtml"
+    :pointmax 2003
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )

@@ -1,0 +1,16 @@
+<h2>Please login with your username and password</h2>
+
+<%= start_form_tag %>
+<%= hidden_field_tag 'into', @into %>
+<table>
+  <tr>
+    <td>Username:</td><td><%= text_field_tag 'username' %></td>
+  </tr>
+  <tr>
+    <td>Password:</td><td><%= password_field_tag 'password' %></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="right"><%= submit_tag 'Login' %></td>
+  </tr>
+</table>
+<%= end_form_tag %>

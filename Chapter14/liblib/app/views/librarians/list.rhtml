@@ -1,0 +1,35 @@
+<h1>Librarians</h1>
+
+<table width="600">
+  <tr>
+    <th align="left">Name</th>
+    <th align="left">Username</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% for librarian in @librarians %>
+  <tr>
+    <td><%=h librarian.name %></td>
+    <td><%=h librarian.authentication.username %></td>
+    <td></td>
+    <td><%=link_to('Create borrower', {:action => 'create_borrower', :id => librarian}, :post => true) unless librarian.is_borrower? %></td>
+    <td><%=link_to('Remove', { :action => 'remove', :id => librarian }, :confirm => 'Are you sure?', :post => true) %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @librarian_pages.current.previous } if @librarian_pages.current.previous %>
+<%= link_to 'Next page', { :page => @librarian_pages.current.next } if @librarian_pages.current.next %>
+
+<% form_tag :action => 'add' do %>
+<%= error_messages_for 'authentication' %>
+<%= error_messages_for 'librarian' %>
+<p><label for="librarian_name">Name</label><br/>
+<%= text_field 'librarian', 'name'  %></p>
+<p><label for="authentication_username">Username</label><br/>
+<%= text_field 'authentication', 'username'  %></p>
+<p><label for="authentication_password">Password</label><br/>
+<%= password_field 'authentication', 'password'  %></p>
+  <%= submit_tag "Create" %>
+<% end %>

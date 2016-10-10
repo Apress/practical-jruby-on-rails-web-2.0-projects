@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>LibLib</title>
+    <%= stylesheet_link_tag 'liblib' %>
+  </head>
+  <body>
+  <table width="100%" height="100%">
+    <tr>
+      <td width="250" height="800" class="leftMenu" align="center" valign="top">
+        <h2>LIBLIB</h2>
+        <ul>
+          <li><%= link_to 'Search for books', :controller => 'book' %></li>
+          <% if @a_librarian %>
+            <li><%= link_to 'Administrate librarians', :controller => 'librarians' %></li>
+            <li><%= link_to 'Administrate borrowers', :controller => 'borrower', :action => 'list' %></li>
+            <li><%= link_to 'Add new books from Amazon', :controller => 'amazon' %></li>
+          <% end %>
+          <% if !@a_librarian %>
+            <li><%= link_to 'Log in as Librarian', :controller => 'auth', :action => 'llogin' %></li>
+          <% end %>
+          <% if !@a_borrower %>
+            <li><%= link_to 'Log in as Borrower', :controller => 'auth', :action => 'blogin' %></li>
+          <% end %>
+        </ul>
+
+
+        <% if @a_librarian %>
+          <p><i>Logged in as Librarian:</i><br/><b><%= h @a_librarian.name %></b> (<%= @a_librarian.authentication.username %>)</p>
+        <% end %>
+        <% if @a_borrower %>
+          <p><i>Logged in as Borrower:</i><br/><b><%= h @a_borrower.name %></b> (<%= @a_borrower.authentication.username %>)</p>
+        <% end %>
+        <% if @a_librarian || @a_borrower %>
+          <p><%= link_to 'Log out', :controller=>'auth',:action=>'logout'%></p>
+        <% end %>
+      </td>
+      <td class="main" valign="top">
+        <p style="color: green"><%= flash[:notice] %></p>
+        <p style="color: red"><%= flash[:error] %></p>
+        <%= yield  %>
+      </td>
+    </tr>
+  </table>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<h1>Book search</h1>
+<p>Search for book:
+<% form_tag({}, :method => :get) do %>
+  <%= text_field_tag 'search', @search || '' %>
+  <%= hidden_field_tag 'searching', 'true' %>
+<% end %>
+
+<% if @results %>
+  <% if @results.empty? %>
+    <p>No books found</p>
+  <% else %>
+    <%= render :partial => 'book_result', :collection => @results %>
+  <% end %>
+<% end %>
+<br/>
+<%= link_to 'Add new book', :action => 'add_description' if @a_librarian %>

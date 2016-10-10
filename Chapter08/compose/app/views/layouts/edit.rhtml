@@ -1,0 +1,9 @@
+<h1>Editing layout</h1>
+
+<%= start_form_tag :action => 'update', :id => @layout %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<%= end_form_tag %>
+
+<%= link_to 'Show', :action => 'show', :id => @layout %> |
+<%= link_to 'Back', :action => 'list' %>

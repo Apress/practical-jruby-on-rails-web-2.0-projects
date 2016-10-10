@@ -1,0 +1,36 @@
+<h2>Please submit your borrower information</h2>
+
+<%= start_form_tag :action => 'create' %>
+<% if !@authentication.errors.blank? || !@borrower.errors.blank? %>
+<p><b>Errors: </b>
+<ul>
+  <% for attr, errs in @authentication.errors %>
+    <% for err in errs %>
+      <li><%= attr %> <%= err %></li>
+    <% end %>
+  <% end %>
+  <% for attr, errs in @borrower.errors %>
+    <% for err in errs %>
+      <li><%= attr %> <%= err %></li>
+    <% end %>
+  <% end %>
+</ul>
+</p>
+<% end %>
+
+<%= hidden_field_tag 'into', @into %>
+<table>
+  <tr>
+    <td>Name:</td><td><%= text_field_tag 'borrower[name]', @borrower.name %></td>
+  </tr>
+  <tr>
+    <td>Username:</td><td><%= text_field_tag 'authentication[username]', @authentication.username %></td>
+  </tr>
+  <tr>
+    <td>Password:</td><td><%= password_field_tag 'authentication[password]' %></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="right"><%= submit_tag 'Create' %></td>
+  </tr>
+</table>
+<%= end_form_tag %>

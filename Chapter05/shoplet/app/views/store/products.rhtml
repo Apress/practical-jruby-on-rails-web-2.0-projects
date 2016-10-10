@@ -1,0 +1,10 @@
+<h2>Products</h2>
+<table width="400">
+  <% for product in @products %>
+    <tr>
+      <td align="left" valign="top"><%= link_to h(product.name),:action => 'product', :id => product %></td>
+      <td align="right" valign="top"><%=price product %></td>
+      <td align="right" valign="top"><%= button_to "Add to cart",:action => 'add_to_cart', :id => product%></td>
+    </tr>
+  <% end %>
+</table>

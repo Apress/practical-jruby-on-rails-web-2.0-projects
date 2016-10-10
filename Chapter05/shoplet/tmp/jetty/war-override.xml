@@ -1,0 +1,8 @@
+<web-app>
+
+<context-param>
+  <param-name>rails.env</param-name>
+  <param-value>development</param-value>
+</context-param>
+
+</web-app>

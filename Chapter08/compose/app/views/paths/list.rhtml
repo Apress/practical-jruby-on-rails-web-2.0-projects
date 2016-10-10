@@ -1,0 +1,26 @@
+<h1>Listing paths</h1>
+
+<table width="400" class="centered">
+  <tr>
+    <th width="150" align="left">Name</th>
+    <th width="150" align="right">Path</th>
+    <th width="50"></th>
+    <th width="50"></th>
+  </tr>
+
+<% for path in @paths %>
+  <tr>
+    <th width="150" align="left"><%= link_to h(path.name),{ :action => 'edit', :id => path }%></th>
+    <th width="150" align="right"><%= h path.path%></th>
+    <th width="50"></th>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => path }, :confirm => 'Are you sure?', :post => true %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @path_pages.current.previous } if @path_pages.current.previous %>
+<%= link_to 'Next page', { :page => @path_pages.current.next } if @path_pages.current.next %>
+
+<br />
+
+<%= link_to 'New path', :action => 'new' %>

@@ -1,0 +1,23 @@
+;; Object liblib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "liblib/"
+  :tables (list 
+   (semanticdb-table "LegacyConnector.java"
+    :major-mode 'jde-mode
+    :tags '(("com.liblib" package nil nil [1 20]) ("javax.naming.Context" include nil nil [22 50]) ("javax.naming.InitialContext" include nil nil [51 86]) ("javax.jms.Message" include nil nil [87 112]) ("javax.jms.MessageListener" include nil nil [113 146]) ("javax.jms.Connection" include nil nil [147 175]) ("javax.jms.Destination" include nil nil [176 205]) ("javax.jms.TextMessage" include nil nil [206 235]) ("javax.jms.Topic" include nil nil [236 259]) ("javax.jms.Queue" include nil nil [260 283]) ("javax.jms.MessageConsumer" include nil nil [284 317]) ("javax.jms.Session" include nil nil [318 343]) ("javax.jms.MessageProducer" include nil nil [344 377]) ("javax.jms.ConnectionFactory" include nil nil [378 413]) ("LegacyConnector" type (:typemodifiers ("public") :interfaces ("MessageListener") :members (("returnTopic" variable (:typemodifiers ("private") :type "Topic") (reparse-symbol class_member_declaration) [477 503]) ("requestQueue" variable (:typemodifiers ("private") :type "Queue") (reparse-symbol class_member_declaration) [508 535]) ("topicConnectionFactory" variable (:typemodifiers ("private") :type "ConnectionFactory") (reparse-symbol class_member_declaration) [540 589]) ("queueConnectionFactory" variable (:typemodifiers ("private") :type "ConnectionFactory") (reparse-symbol class_member_declaration) [594 643]) ("returnConnection" variable (:typemodifiers ("private") :type "Connection") (reparse-symbol class_member_declaration) [649 685]) ("returnSession" variable (:typemodifiers ("private") :type "Session") (reparse-symbol class_member_declaration) [690 720]) ("cons" variable (:typemodifiers ("private") :type "MessageConsumer") (reparse-symbol class_member_declaration) [725 754]) ("handler" variable (:typemodifiers ("private") :type "LegacyMessageHandler") (reparse-symbol class_member_declaration) [760 797]) ("LegacyConnector" function (:constructor-flag t :throws ("Exception") :typemodifiers ("public")) (reparse-symbol class_member_declaration) [803 1697]) ("send" function (:typemodifiers ("public") :arguments (("id" variable (:type "String") (reparse-symbol formal_parameters) [1720 1729]) ("msg" variable (:type "String") (reparse-symbol formal_parameters) [1731 1741])) :type "void") (reparse-symbol class_member_declaration) [1703 2546]) ("onMessage" function (:typemodifiers ("public") :arguments (("msg" variable (:type "Message") (reparse-symbol formal_parameters) [2574 2585])) :type "void") (reparse-symbol class_member_declaration) [2552 2779]) ("setHandler" function (:throws ("Exception") :typemodifiers ("public") :arguments (("handler" variable (:type "LegacyMessageHandler") (reparse-symbol formal_parameters) [2808 2836])) :type "void") (reparse-symbol class_member_declaration) [2785 2928]) ("main" function (:throws ("Exception") :typemodifiers ("public" "static") :arguments (("args" variable (:type "String[]") (reparse-symbol formal_parameters) [3266 3279])) :type "void") (reparse-symbol class_member_declaration) [3242 3629])) :type "class") nil [415 3631]))
+    :file "LegacyConnector.java"
+    :pointmax 3632
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "LegacyMessageHandler.java"
+    :major-mode 'jde-mode
+    :tags '(("com.liblib" package nil nil [1 20]) ("LegacyMessageHandler" type (:typemodifiers ("public") :members (("handle" function (:arguments (("id" variable (:type "String") (reparse-symbol formal_parameters) [78 87]) ("msg" variable (:type "String") (reparse-symbol formal_parameters) [89 99])) :type "void") (reparse-symbol interface_member_declaration) [66 101])) :type "interface") nil [22 103]))
+    :file "LegacyMessageHandler.java"
+    :pointmax 104
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )

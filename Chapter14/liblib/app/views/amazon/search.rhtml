@@ -1,0 +1,18 @@
+<h1>Amazon Book search</h1>
+<p>Search for book:
+<% form_tag({}, :method => :get) do %>
+  <%= text_field_tag 'search', @search || '' %>
+  <%= hidden_field_tag 'searching', 'true' %>
+<% end %>
+
+<% if @results %>
+  <% if @results.empty? %>
+    <p>No books found</p>
+  <% else %>
+    <p><%=pluralize @results.size, 'book'%> found</p>
+    <table width="800">
+    <%= render :partial => 'amazon_result', :collection => @results %>
+    </table>
+  <% end %>
+<% end %>
+

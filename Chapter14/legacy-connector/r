@@ -1,0 +1,4 @@
+#!/bin/sh
+
+java -cp ${CLASSPATH}:/Users/olabini/workspace/glassfish/lib/appserv-rt.jar:/Users/olabini/workspace/glassfish/lib/appserv-ws.jar:/Users/olabini/workspace/glassfish/lib/install/applications/jmsra/jmsra.jar:/Users/olabini/workspace/glassfish/lib/install/applications/jmsra/imqjmsra.jar:/Users/olabini/workspace/glassfish/lib/install/applications/jmsra/imqbroker.jar:/Users/olabini/workspace/glassfish/imq/lib/imq.jar:/Users/olabini/workspace/glassfish/lib/appserv-admin.jar:/Users/olabini/workspace/glassfish/imq/lib/jms.jar:/Users/olabini/workspace/glassfish/lib/javaee.jar:build $*
+

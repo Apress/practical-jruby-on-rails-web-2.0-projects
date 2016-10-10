@@ -1,0 +1,10 @@
+<h1>Sequence: <%= h @sequence.name %></h1>
+
+<p><b>Current: </b> <%= h @sequence.value %></p>
+<p><b>Last updated: </b> <%= h @sequence.last_updated %></p>
+<p><b>Last updated by: </b> <%= h @sequence.last_updated_by %></p>
+
+<%= link_to 'Next', { :action => 'next', :id => @sequence.name }, :method => :post %> |
+<%= link_to 'Reset', { :action => 'reset', :id => @sequence.name }, :method => :post %><br/><br/>
+
+<%= link_to 'Back', :action => 'list' %>

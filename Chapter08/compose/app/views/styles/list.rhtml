@@ -1,0 +1,24 @@
+<h1>Listing styles</h1>
+
+<table width="500" class="centered">
+  <tr>
+    <th width="200" align="left">Name</th>
+    <th width="150" align="right">Type</th>
+    <th width="150" align="right"></th>
+  </tr>
+
+<% for style in @styles %>
+  <tr>
+    <td align="left"><%=link_to h(style.name), admin_url(:controller => params[:controller],:action => 'edit', :id => style)%></td>
+    <td align="right"><%=h style.style_type.name %></td>
+    <td align="right"><%= link_to 'Destroy', admin_url(:controller => params[:controller], :action => 'destroy', :id => style), :confirm => 'Are you sure?', :post => true if style.stylings.empty?%></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @style_pages.current.previous } if @style_pages.current.previous %>
+<%= link_to 'Next page', { :page => @style_pages.current.next } if @style_pages.current.next %>
+
+<br />
+
+<%= link_to 'Create new style', admin_url(:controller => params[:controller],:action => 'new') %>

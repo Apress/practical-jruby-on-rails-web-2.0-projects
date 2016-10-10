@@ -1,0 +1,22 @@
+;; Object users/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "users/"
+  :tables (list 
+   (semanticdb-table "new.rhtml"
+    :major-mode 'html-mode
+    :tags '(("New user" section nil nil [1 4]))
+    :file "new.rhtml"
+    :pointmax 174
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "_form.rhtml"
+    :major-mode 'html-mode
+    :tags 'nil
+    :file "_form.rhtml"
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )

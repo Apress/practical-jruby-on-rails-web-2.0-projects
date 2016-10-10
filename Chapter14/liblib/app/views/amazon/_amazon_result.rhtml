@@ -1,0 +1,21 @@
+<tr>
+  <td><%= image_tag amazon_result.image_url %></td>
+  <td>
+    <table>
+      <tr><td colspan="2"><h3><%=h amazon_result.name %></h3></td></tr>
+      <tr><td><b>Publisher</b></td><td><%=h amazon_result.publisher %></td></tr>
+      <tr><td><b>ISBN</b></td><td><i><%=h amazon_result.isbn %></i></td></tr>
+      <tr><td><b>Price</b></td><td><%=h amazon_result.price %></td></tr>
+      <tr><td><b>Author(s)</b></td><td><%=amazon_result.authors.map{|v|h v}.join("<br/>") %></td></tr>
+    </table>
+  </td>
+  <td>
+    <%= start_form_tag :action => 'import' %>
+      <%= hidden_field_tag 'name', amazon_result.name %>
+      <%= hidden_field_tag 'isbn', amazon_result.isbn %>
+      <%= hidden_field_tag 'authors', amazon_result.authors.join(";") %>
+      <%= hidden_field_tag 'search', @search %>
+      <%= submit_tag 'Import this book' %>
+    <%= end_form_tag %>
+  </td>
+</tr>

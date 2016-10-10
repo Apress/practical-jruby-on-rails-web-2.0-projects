@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<company>
+  <projects>
+    <project id="shoplet">
+      <title>
+        The Store: Shoplet
+      </title>
+      <description>
+        The Shoplet application is supposed to 
+        teach the reader about basic Rails functionality.
+      </description>
+      <manager ref="hmank"/>
+    </project>
+    <project id="compose">
+      <title>
+        CoMpoSe: Content made easy
+      </title>
+      <description>
+        CoMpoSe is a content management system, 
+        based on high tech buzzwords like XML, RedCloth and Rails.
+      </description>
+      <manager ref="slars"/>
+      <manager ref="adahl"/>
+    </project>
+    <project id="bigbrother">
+      <title>
+        Big Brother, adminstration in a nutshell
+      </title>
+      <description>
+        Big Brother is the swiss army knife of adminstration tools
+      </description>
+      <manager ref="adahl"/>
+    </project>
+  </projects>
+  <managers>
+    <manager id="adahl">Arne Dahl</manager>
+    <manager id="hmank">Henning Mankell</manager>
+    <manager id="slars">Stieg Larsson</manager>
+  </managers>
+</company>

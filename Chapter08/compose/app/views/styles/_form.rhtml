@@ -1,0 +1,13 @@
+<%= error_messages_for 'style' %>
+
+<!--[form:style]-->
+<p><label for="style_name">Name</label><br/>
+<%= text_field 'style', 'name'  %></p>
+
+<p><label for="style_data">Content</label><br/>
+<%= text_area 'style', 'data'  %></p>
+
+<p><label for="style_style_type">Style Type</label><br/>
+<%= select 'style', 'style_type_id', @style_types.collect {|p| [ p.name, p.id ] },{}%></p>
+<!--[eoform:style]-->
+

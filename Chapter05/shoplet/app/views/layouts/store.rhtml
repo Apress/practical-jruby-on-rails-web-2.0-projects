@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>Shoplet Online Store<%= ": #@title" if @title %></title>
+  <%= stylesheet_link_tag 'shoplet' %>
+</head>
+<body>
+  <table width="100%" height="100%">
+    <tr>
+      <td width="250" class="leftMenu" align="center" valign="top">
+        <h2><%= link_to 'Shoplet', :action=>'index'%></h2>
+        <h3><%= link_to 'Online Shopping', :action=>'index'%></h3>
+        <br/>
+        <% for t in @types %>
+          <p><%= link_to plural(t.name), :action=>'products', :id=>t %></p>
+        <% end %>
+        <% unless @cart.blank?%>
+          <br/>
+          <br/>
+          <p>You have <%=pluralize @cart.length, 'item'%> in your cart for <%= money @price %>.</p>
+          <p><%= link_to "Cart",:action=>'cart'%></p>
+          <p><%= button_to 'Empty cart', :action=>'empty_cart', :back_to=>url_for(params)%></p>
+        <% else %>
+          <br/>
+          <br/>
+          <p>Your cart is empty</p>
+        <% end %>
+        <br/>
+      </td>
+      <td class="main" valign="top">
+        <p style="color: green"><%= flash[:notice] %></p>
+
+        <%= yield  %>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

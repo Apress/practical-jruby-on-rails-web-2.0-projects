@@ -1,0 +1,10 @@
+<%= error_messages_for 'order' %>
+
+<!--[form:order]-->
+<p><label for="order_time">Time</label><br/>
+<%= datetime_select 'order', 'time'  %></p>
+
+<p><label for="order_status">Status</label><br/>
+<%= text_field 'order', 'status'  %></p>
+<!--[eoform:order]-->
+

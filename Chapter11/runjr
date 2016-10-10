@@ -1,0 +1,10 @@
+#!/bin/sh
+
+export CLASSPATH=${CLASSPATH}:/home/olagus/workspace/glassfish/lib/appserv-rt.jar
+export CLASSPATH=${CLASSPATH}:/home/olagus/workspace/glassfish/lib/j2ee.jar
+export CLASSPATH=${CLASSPATH}:/home/olagus/workspace/glassfish/lib/j2ee-svc.jar
+export CLASSPATH=${CLASSPATH}:/home/olagus/workspace/glassfish/lib/javaee.jar
+export CLASSPATH=${CLASSPATH}:/home/olagus/books/jrubyonrails/projects/p3/bbservice/bbservice.jar
+
+
+jruby $*

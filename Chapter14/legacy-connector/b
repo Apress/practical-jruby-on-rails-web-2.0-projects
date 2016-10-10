@@ -1,0 +1,6 @@
+#!/bin/sh
+
+javac -cp ${CLASSPATH}:/Users/olabini/workspace/glassfish/lib/javaee.jar  -d build src/java/com/liblib/*.java
+cd build
+jar cf ../liblib-connector.jar .
+

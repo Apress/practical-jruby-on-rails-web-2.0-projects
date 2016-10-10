@@ -1,0 +1,29 @@
+;; Object book/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "book/"
+  :tables (list 
+   (semanticdb-table "search.rhtml"
+    :major-mode 'html-mode
+    :tags '(("Book search" section nil nil [1 4]))
+    :file "search.rhtml"
+    :pointmax 443
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "_book_result.rhtml"
+    :major-mode 'html-mode
+    :tags 'nil
+    :file "_book_result.rhtml"
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "book.rhtml"
+    :major-mode 'html-mode
+    :tags '(("Authors:" section nil nil [1 4]))
+    :file "book.rhtml"
+    :pointmax 1143
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )
